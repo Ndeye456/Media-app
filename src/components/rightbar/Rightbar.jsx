@@ -5,7 +5,7 @@ import "./rightbar.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { Add, Remove } from "@material-ui/icons";
+import { Add, Remove } from "@mui/icons-material";
 
 export default function Rightbar({ user }) {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;

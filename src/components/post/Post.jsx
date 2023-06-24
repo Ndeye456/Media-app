@@ -1,4 +1,4 @@
-import   MoreHorizSharp  from '@material-ui/icons/MoreHorizSharp'
+import   MoreHorizSharp  from '@mui/icons-material/MoreHoriz'
 import './post.css'
 import { useContext, useEffect, useState } from 'react'
 import axios from 'axios'

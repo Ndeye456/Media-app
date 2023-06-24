@@ -1,12 +1,17 @@
 import "./share.css";
-import PermMediaSharp from "@material-ui/icons/PermMediaSharp";
-import LabelSharp from "@material-ui/icons/LabelSharp";
-import RoomSharp from "@material-ui/icons/RoomSharp";
-import EmojiEmotionsSharp from "@material-ui/icons/EmojiEmotionsSharp";
+// import PermMediaSharp from "@material-ui/icons/PermMediaSharp";
+import PermMediaSharp from "@mui/icons-material/PermMedia";
+// import LabelSharp from "@mui/icons/LabelSharp";
+import LabelSharp from "@mui/icons-material/Label";
+// import RoomSharp from "@mui/icons/RoomSharp";
+import RoomSharp from "@mui/icons-material/Room";
+// import EmojiEmotionsSharp from "@mui/icons/EmojiEmotionsSharp";
+import EmojiEmotionsSharp from "@mui/icons-material/EmojiEmotions";
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
-import {Cancel} from "@material-ui/icons";
+// import {Cancel} from "@mui/icons";
+import {Cancel} from "@mui/icons-material";
 
 
 export default function Share() {

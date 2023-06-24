@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.12.4",
-    "@material-ui/icons": "^4.11.3",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.6",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
+    "dayjs": "^1.11.8",
+    "lucide-react": "^0.252.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
@@ -42,5 +45,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://zippy-zabaione-37dad2.netlify.app/api"
+  "proxy": "https://social-mediabackend.onrender.com/api"
 }

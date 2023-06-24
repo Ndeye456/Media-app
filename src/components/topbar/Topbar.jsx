@@ -1,9 +1,14 @@
 import React, { useContext } from "react";
 import "./topbar.css";
-import SearchSharpIcon from "@material-ui/icons/SearchSharp";
-import PersonSharpIcon from "@material-ui/icons/PersonSharp";
-import ChatSharpIcon from "@material-ui/icons/ChatSharp";
-import NotificationsSharpIcon from "@material-ui/icons/NotificationsSharp";
+// import SearchSharpIcon from "@material-ui/icons/SearchSharp";
+// import PersonSharpIcon from "@material-ui/icons/PersonSharp";
+// import ChatSharpIcon from "@material-ui/icons/ChatSharp";
+// import NotificationsSharpIcon from "@material-ui/icons/NotificationsSharp";
+import SearchIcon from '@mui/icons-material/Search';
+import PersonIcon from '@mui/icons-material/Person';
+import ChatIcon from '@mui/icons-material/Chat';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
@@ -19,7 +24,8 @@ export default function Topbar() {
       </div>
       <div className="topbarCenter">
         <div className="searchbar">
-          <SearchSharpIcon className="searchIcon" />
+          {/* <SearchSharpIcon className="searchIcon" /> */}
+          <SearchIcon className="searchIcon" />
           <input
             placeholder="search for frien, post or video"
             className="searchInput"
@@ -33,15 +39,18 @@ export default function Topbar() {
         </div>
         <div className="topbarIcons">
           <div className="topbarIconItem">
-            <PersonSharpIcon />
+            {/* <PersonSharpIcon /> */}
+            <PersonIcon />
             <span className="topbarIconBadge">1</span>
           </div>
           <div className="topbarIconItem">
-            <ChatSharpIcon />
+            {/* <ChatSharpIcon /> */}
+            <ChatIcon />
             <span className="topbarIconBadge">2</span>
           </div>
           <div className="topbarIconItem">
-            <NotificationsSharpIcon />
+            {/* <NotificationsSharpIcon /> */}
+            <NotificationsIcon />
             <span className="topbarIconBadge">1</span>
           </div>
         </div>
