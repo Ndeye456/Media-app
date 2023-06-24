@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import "./topbar.css";
-import SearchSharpIcon from "@material-ui/icons/SearchSharp";
-import PersonSharpIcon from "@material-ui/icons/PersonSharp";
-import ChatSharpIcon from "@material-ui/icons/ChatSharp";
-import NotificationsSharpIcon from "@material-ui/icons/NotificationsSharp";
+import {User, Search} from 'lucide-react'
+// import SearchSharpIcon from "@material-ui/icons/SearchSharp";
+// import PersonSharpIcon from "@material-ui/icons/PersonSharp";
+// import ChatSharpIcon from "@material-ui/icons/ChatSharp";
+// import NotificationsSharpIcon from "@material-ui/icons/NotificationsSharp";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
@@ -19,7 +20,8 @@ export default function Topbar() {
       </div>
       <div className="topbarCenter">
         <div className="searchbar">
-          <SearchSharpIcon className="searchIcon" />
+          {/* <SearchSharpIcon className="searchIcon" /> */}
+          <Search className="searchIcon" />
           <input
             placeholder="search for frien, post or video"
             className="searchInput"
@@ -33,15 +35,18 @@ export default function Topbar() {
         </div>
         <div className="topbarIcons">
           <div className="topbarIconItem">
-            <PersonSharpIcon />
+            {/* <PersonSharpIcon /> */}
+            Icon goes here
             <span className="topbarIconBadge">1</span>
           </div>
           <div className="topbarIconItem">
-            <ChatSharpIcon />
+            {/* <ChatSharpIcon /> */}
+            Icon goes here
             <span className="topbarIconBadge">2</span>
           </div>
           <div className="topbarIconItem">
-            <NotificationsSharpIcon />
+            {/* <NotificationsSharpIcon /> */}
+            Icon goes here
             <span className="topbarIconBadge">1</span>
           </div>
         </div>

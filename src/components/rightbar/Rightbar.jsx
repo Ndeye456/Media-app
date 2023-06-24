@@ -5,7 +5,7 @@ import "./rightbar.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { Add, Remove } from "@material-ui/icons";
+// import { Add, Remove } from "@material-ui/icons";
 
 export default function Rightbar({ user }) {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -72,7 +72,8 @@ export default function Rightbar({ user }) {
         {user.username !== currentUser.username && (
           <button className="rightbarFollowButton" onClick={handleClick}>
             {followed ? "Unfollow" : "Follow"}
-            {followed ? <Remove /> : <Add />}
+            Icon goes here
+            {/* {followed ? <Remove /> : <Add />} */}
           </button>
         )}
         <h4 className="rightbarTitle">User information</h4>
