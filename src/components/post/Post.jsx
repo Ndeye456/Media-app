@@ -1,8 +1,8 @@
-// import   MoreHorizSharp  from '@material-ui/icons/MoreHorizSharp'
+import   MoreHorizSharp  from '@mui/icons-material/MoreHoriz'
 import './post.css'
 import { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
-// import { format } from "timeago.js"
+import { format } from "timeago.js"
 import {Link} from "react-router-dom"
 import { AuthContext } from '../../context/AuthContext'
 
@@ -44,12 +44,10 @@ useEffect(() =>{
      </Link>
     <span className='postUsername'>
       {user.username}</span>
-    {/* <span className='postDate'>{format(post.createdAt)}</span> */}
-    <span className='postDate'>{post.createdAt}</span>
+    <span className='postDate'>{format(post.createdAt)}</span>
         </div>
             <div className='postTopRight'>
-              {/* <MoreHorizSharp/>   */}
-              Icon goes here
+              <MoreHorizSharp/>  
             </div>
         </div>
         <div className='postCenter'>
