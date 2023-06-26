@@ -88,7 +88,7 @@ export default function Messenger() {
     });
 
     try {
-      const res = await axios.post("https://social-mediabackend.onrender.com/api/messages", message);
+      const res = await axios.post("ws://https://social-mediabackend.onrender.com/api/messages", message);
       setMessages([...messages, res.data]);
       setNewMessage("");
     } catch (err) {
