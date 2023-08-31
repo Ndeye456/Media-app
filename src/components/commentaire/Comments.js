@@ -14,7 +14,7 @@ const Comments = ({postId}) => {
   useEffect(() => {
     const fetchProducts = async () => {
       const { data } = await axios.get(
-        "http://localhost:8800/api/commentaires"
+        "https://social-mediabackend.onrender.com/api/commentaires"
       );
       setComments(data);
     };
@@ -34,23 +34,13 @@ const Comments = ({postId}) => {
     }
     
     try {
-      const response = await axios.post(`http://localhost:8800/api/commentaires`,  data );
+      const response = await axios.post(`https://social-mediabackend.onrender.com/api/commentaires`,  data );
       console.log('New comment added:', response.data);
     } catch (error) {
       console.error('Error adding comment:', error);
     }
     
   };
-
-  // const date = 
-  //   if (response.ok) {
-  //     // Mettre à jour les commentaires localement
-  //     const newCommentData =  response.json();
-  //     setComments([...comments, newCommentData]);
-  //     setNewComment('');
-  //   }
-  // };
-
  
   return (
     <div className="comments">
