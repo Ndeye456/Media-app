@@ -7,6 +7,8 @@ import "./messenger.css";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 import { io } from "socket.io-client";
+import { useDispatch } from "react-redux";
+import { addMess } from "../../redux/actions/index";
 
 export default function Messenger() {
   const [conversations, setConversations] = useState([]);
@@ -18,6 +20,8 @@ export default function Messenger() {
   const socket = useRef();
   const { user } = useContext(AuthContext);
   const scrollRef = useRef();
+  const [messBtn, setMessBtn] = useState("Send");
+  const dispatch = useDispatch();
 
   useEffect(() => {
     socket.current = io("https://socket-xhz4.onrender.com/");
@@ -48,7 +52,10 @@ export default function Messenger() {
   useEffect(() => {
     const getConversations = async () => {
       try {
-        const res = await axios.get("https://social-mediabackend.onrender.com/api/conversations/" + user._id);
+        const res = await axios.get(
+          "https://social-mediabackend.onrender.com/api/conversations/" +
+            user._id
+        );
         setConversations(res.data);
       } catch (err) {
         console.log(err);
@@ -60,7 +67,10 @@ export default function Messenger() {
   useEffect(() => {
     const getMessages = async () => {
       try {
-        const res = await axios.get("https://social-mediabackend.onrender.com/api/messages/" + currentChat?._id);
+        const res = await axios.get(
+          "https://social-mediabackend.onrender.com/api/messages/" +
+            currentChat?._id
+        );
         setMessages(res.data);
       } catch (err) {
         console.log(err);
@@ -76,20 +86,26 @@ export default function Messenger() {
       text: newMessage,
       conversationId: currentChat._id,
     };
-
+    if (messBtn === "Send") {
+      dispatch(addMess(message));
+    } else {
+      setMessBtn();
+    }
     const receiverId = currentChat.members.find(
       (member) => member !== user._id
     );
 
-    socket.current.emit("sendMessage", {
-      senderId: user._id,
-      receiverId,
-      text: newMessage,
-    });
-
     try {
-      const res = await axios.post("ws://https://social-mediabackend.onrender.com/api/messages", message);
+      const res = await axios.post(
+        "https://social-mediabackend.onrender.com/api/messages",
+        message
+      );
       setMessages([...messages, res.data]);
+      socket.current.emit("sendMessage", {
+        senderId: user._id,
+        receiverId,
+        text: newMessage,
+      });
       setNewMessage("");
     } catch (err) {
       console.log(err);
@@ -99,7 +115,6 @@ export default function Messenger() {
   useEffect(() => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
-
 
   return (
     <>

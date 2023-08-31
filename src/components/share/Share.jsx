@@ -43,7 +43,9 @@ export default function Share() {
     try {
      await axios.post("https://social-mediabackend.onrender.com/api/posts",newPost);
      window.location.reload();
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <div className="share">

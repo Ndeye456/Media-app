@@ -34,7 +34,7 @@ export default function Register() {
         <div className="loginLeft">
           <h3 className="loginLogo">Ndeyeamiesocial</h3>
           <span className="loginDesc">
-            Connect with friends and the world around you on Ndeyeamiesocial.
+          Connectez-vous avec vos amis et le monde qui vous entoure sur Myasocial
           </span>
         </div>
         <div className="loginRight">

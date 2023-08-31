@@ -11,7 +11,10 @@ export default function Conversation({ conversation, currentUser }) {
 
     const getUser = async () => {
       try {
-        const res = await axios("https://social-mediabackend.onrender.com/api/users?userId=" + friendId);
+        const res = await axios(
+          "https://social-mediabackend.onrender.com/api/users?userId=" +
+            friendId
+        );
         setUser(res.data);
       } catch (err) {
         console.log(err);
@@ -26,8 +29,9 @@ export default function Conversation({ conversation, currentUser }) {
         className="conversationImg"
         src={
           user?.profilePicture
-           ?PF + user.profilePicture 
-           : PF+"person/noAvatar.png"}
+            ? PF + user.profilePicture
+            : PF + "person/noAvatar.png"
+        }
         alt=""
       />
       <span className="conversationName">{user?.username}</span>

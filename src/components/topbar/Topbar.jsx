@@ -8,13 +8,14 @@ import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
 import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
 export default function Topbar() {
   const { user } = useContext(AuthContext);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const state = useSelector((state)=> state.addMess)
   return (
     <div className="topbarContainer">
       <div className="topbarLeft">
@@ -45,8 +46,10 @@ export default function Topbar() {
           </div>
           <div className="topbarIconItem">
             {/* <ChatSharpIcon /> */}
+            <Link to="/message" style={{ color: "white"}}>
             <ChatIcon />
-            <span className="topbarIconBadge">2</span>
+            <span className="topbarIconBadge">{state.length}</span>
+            </Link>
           </div>
           <div className="topbarIconItem">
             {/* <NotificationsSharpIcon /> */}

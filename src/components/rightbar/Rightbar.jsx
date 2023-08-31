@@ -15,6 +15,21 @@ export default function Rightbar({ user }) {
     currentUser.followings.includes(user?.id)
   );
 
+  
+  const [users, setUser] = useState([]);
+  
+  useEffect(() => {
+    axios.get(`http://localhost:8800/api/users`)
+    .then((res)=>{
+      setUser(res.data);
+      //console.log(users.length);
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  
+      
+  }, []);
 
   useEffect(() => {
     const getFriends = async () => {
@@ -56,11 +71,33 @@ export default function Rightbar({ user }) {
           </span>
         </div>
         <img className="rightbarAd" src="assets/jus.jpg" alt="" />
-        <h4 className="rightbarTitle">Online friends</h4>
+        <h4 className="rightbarTitle">Les utilisateurs connectés</h4>
         <ul className="rightbarFriendList">
-          {Users.map((u) => (
-            <Online key={u.id} user={u} />
-          ))}
+        <>
+    {
+      users.map((user)=>{
+        return (
+          <Link
+              to={"/profile/" + user.username}
+              style={{ textDecoration: "none" }}>
+          <li className="rightbarFriend">
+          <div className="rightbarProfileImgContainer">
+            <img className="rightbarProfileImg" src={
+            user.profilePicture
+              ? PF + user.profilePicture
+              : PF + "person/noAvatar.png"
+          } alt=""/>
+            <span className="rightbarOnline"></span>
+          </div>
+          <span className="rightbarUsername">{user.username}</span>
+        </li>
+</Link>
+      
+        )
+      })
+    }
+    
+      </>
         </ul>
       </>
     );

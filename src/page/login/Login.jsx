@@ -27,7 +27,7 @@ export default function Login() {
         <div className="loginLeft">
           <h3 className="loginLogo">Myasocial</h3>
           <span className="loginDesc">
-            Connect with friends and the world around you on Myasocial
+          Connectez-vous avec vos amis et le monde qui vous entoure sur Myasocial
           </span>
         </div>
         <div className="loginRight">
